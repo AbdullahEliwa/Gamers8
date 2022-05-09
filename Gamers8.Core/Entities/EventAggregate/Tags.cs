@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gamers8.Core.Entities
+namespace Gamers8.Core.Entities.EventAggregate
 {
     public class Tags : AuditableEntity<string>
     {

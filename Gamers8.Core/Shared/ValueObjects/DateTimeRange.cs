@@ -4,12 +4,12 @@ using System.Collections.Generic;
 
 namespace Booking.Core.ValueObjects
 {
-    public class DateTimeOffsetRange : ValueObject
+    public class DateTimeRange : ValueObject
     {
-        public DateTimeOffset Start { get; private set; }
-        public DateTimeOffset End { get; private set; }
+        public DateTime Start { get; private set; }
+        public DateTime End { get; private set; }
 
-        public DateTimeOffsetRange(DateTimeOffset start, DateTimeOffset end)
+        public DateTimeRange(DateTime start, DateTime end)
         {
             //ToDo: Add Package if needed
             //Guard.Against.OutOfRange(start, nameof(start), start, end);
@@ -17,12 +17,12 @@ namespace Booking.Core.ValueObjects
             End = end;
         }
 
-        public DateTimeOffsetRange(DateTimeOffset start, TimeSpan duration)
+        public DateTimeRange(DateTime start, TimeSpan duration)
             : this(start, start.Add(duration))
         {
         }
 
-        //public bool Overlaps(DateTimeOffsetRange dateTimeRange)
+        //public bool Overlaps(DateTimeRange dateTimeRange)
         //{
         //    return Start < dateTimeRange.End &&
         //        End > dateTimeRange.Start;

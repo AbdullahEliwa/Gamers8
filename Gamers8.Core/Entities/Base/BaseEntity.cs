@@ -11,7 +11,6 @@ namespace Gamers8.Core.Entities.Base
     public abstract class BaseEntity<TKey>
     {
         public virtual TKey Id { get; set; }
-        public bool IsActive { get; private set; }
         public byte[] RowVersion { get; set; }
 
         public virtual string GetLocalizedPropertyValue(string propertyName)

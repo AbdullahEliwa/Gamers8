@@ -1,5 +1,4 @@
-﻿
-using Booking.Core.Abstractions;
+﻿using Gamers8.Core.Abstractions;
 
 namespace Booking.Core.ValueObjects
 {
