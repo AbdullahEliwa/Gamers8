@@ -2,7 +2,6 @@
 using System.Reflection;
 
 using Gamers8.Core.Entities.Base;
-using Gamers8.Core.Services;
 using Gamers8.Core.Entities.SummitAggregate;
 using Gamers8.Core.Abstractions;
 using Gamers8.Infrastructure.Persistence.Extensions;
@@ -12,10 +11,9 @@ namespace Booking.Infrastructure.Persistence
 {
     public class Gamers8Context : DbContext
     {
-        private readonly ICurrentUserService _currentUserService;
-        public Gamers8Context(DbContextOptions options, ICurrentUserService currentUserService) : base(options)
+        public Gamers8Context(DbContextOptions options) : base(options)
         {
-            _currentUserService = currentUserService;
+
         }
 
         #region DbSets
@@ -30,18 +28,18 @@ namespace Booking.Infrastructure.Persistence
 
         #endregion
 
-        public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
+        public async Task<bool> SaveEntitiesAsync<T>(CancellationToken cancellationToken = default)
         {
-            foreach (var entry in ChangeTracker.Entries<AuditableEntity<Guid>>())
+            foreach (var entry in ChangeTracker.Entries<AuditableEntity<T>>())
                 switch (entry.State)
                 {
                     case EntityState.Added:
-                        entry.Entity.CreatedBy = string.IsNullOrEmpty(_currentUserService.UserId) ? "Na" : _currentUserService.UserId;
+                        entry.Entity.CreatedBy = "Na";
                         entry.Entity.Created = DateTimeOffset.UtcNow;
                         break;
 
                     case EntityState.Modified:
-                        entry.Entity.LastModifiedBy = string.IsNullOrEmpty(_currentUserService.UserId) ? "Na" : _currentUserService.UserId;
+                        entry.Entity.LastModifiedBy = "Na";
                         entry.Entity.LastModified = DateTimeOffset.UtcNow;
                         break;
                 }

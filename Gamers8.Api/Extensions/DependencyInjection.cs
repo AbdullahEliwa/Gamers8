@@ -1,5 +1,5 @@
-﻿using Gamers8.Api.Services;
-using Gamers8.Core.Services;
+﻿using MediatR;
+using System.Reflection;
 
 namespace Gamers8.Api.Extensions
 {
@@ -8,7 +8,9 @@ namespace Gamers8.Api.Extensions
         public static IServiceCollection AddPresentation(this IServiceCollection services)
         {
             services.AddHttpContextAccessor();
-            services.AddSingleton<ICurrentUserService, CurrentUserService>();
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            //services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddMediatR(Assembly.GetExecutingAssembly());
 
             return services;
         }
