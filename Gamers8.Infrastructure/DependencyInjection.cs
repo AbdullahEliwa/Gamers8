@@ -16,6 +16,7 @@ namespace Gamers8.Infrastructure
                         configuration.GetConnectionString("DefaultConnection"),
                         b => b.MigrationsAssembly(typeof(Gamers8Context).Assembly.FullName)));
 
+            services.AddDatabaseDeveloperPageExceptionFilter();
             return services;
         }
 

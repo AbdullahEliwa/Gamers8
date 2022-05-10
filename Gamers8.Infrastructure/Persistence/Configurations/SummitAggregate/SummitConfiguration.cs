@@ -1,4 +1,4 @@
-﻿using Gamers8.Core.Entities.EventAggregate;
+﻿using Gamers8.Core.Entities.SummitAggregate;
 using Gamers8.Infrastructure.Persistence.Configurations.Base;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -16,16 +16,12 @@ namespace Gamers8.Infrastructure.Persistence.Configurations.EventAggregate
         {
             base.Configure(builder);
 
-            builder.Property(s => s.Title)
-                .IsRequired();
             builder.OwnsOne(s => s.Title, t =>
             {
                 t.Property(n => n.DescriptionAr).HasColumnName("TitleAr").IsRequired().HasMaxLength(50);
                 t.Property(n => n.DescriptionEn).HasColumnName("TitleEn").IsRequired().HasMaxLength(50);
             });
 
-            builder.Property(s => s.DefaultImagePath)
-                .IsRequired();
             builder.OwnsOne(s => s.DefaultImagePath, t =>
             {
                 t.Property(n => n.DescriptionAr).HasColumnName("DefaultImagePathAr").IsRequired().HasMaxLength(150);
@@ -35,8 +31,6 @@ namespace Gamers8.Infrastructure.Persistence.Configurations.EventAggregate
             builder.Property(s => s.SeasonZone)
                .IsRequired();
 
-            builder.Property(s => s.DateTime)
-                .IsRequired();
             builder.OwnsOne(s => s.DateTime, t =>
             {
                 t.Property(n => n.Start).HasColumnType("Date").HasColumnName("StartingDate").IsRequired();
@@ -49,8 +43,6 @@ namespace Gamers8.Infrastructure.Persistence.Configurations.EventAggregate
                 t.Property(n => n.DescriptionEn).HasColumnName("NameEn").IsRequired();
             });
 
-            builder.Property(s => s.ProgramFilePath)
-                .IsRequired(false);
             builder.OwnsOne(s => s.ProgramFilePath, t =>
             {
                 t.Property(n => n.DescriptionAr).HasColumnName("ProgramFilePathAr").IsRequired().HasMaxLength(150);

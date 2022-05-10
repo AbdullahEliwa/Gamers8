@@ -11,16 +11,12 @@ namespace Gamers8.Infrastructure.Persistence.Configurations.SummitAggregate
         {
             base.Configure(builder);
 
-            builder.Property(s => s.Title)
-               .IsRequired();
             builder.OwnsOne(s => s.Title, t =>
             {
                 t.Property(n => n.DescriptionAr).HasColumnName("TitleAr").IsRequired().HasMaxLength(50);
                 t.Property(n => n.DescriptionEn).HasColumnName("TitleEn").IsRequired().HasMaxLength(50);
             });
 
-            builder.Property(s => s.DateTime)
-                .IsRequired();
             builder.OwnsOne(s => s.DateTime, t =>
             {
                 t.Property(n => n.Start).HasColumnName("StartingTime").IsRequired();

@@ -3,9 +3,10 @@ using System.Reflection;
 
 using Gamers8.Core.Entities.Base;
 using Gamers8.Core.Services;
-using Gamers8.Core.Entities.EventAggregate;
+using Gamers8.Core.Entities.SummitAggregate;
 using Gamers8.Core.Abstractions;
 using Gamers8.Infrastructure.Persistence.Extensions;
+using Gamers8.Core.Entities.SharedAggregate;
 
 namespace Booking.Infrastructure.Persistence
 {
@@ -18,8 +19,14 @@ namespace Booking.Infrastructure.Persistence
         }
 
         #region DbSets
-
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<Speaker> Speakers { get; set; }
         public DbSet<Summit> Summits { get; set; }
+        public DbSet<SummitDay> SummitDays { get; set; }
+        public DbSet<SummitSession> SummitSessions { get; set; }
+
+
 
         #endregion
 

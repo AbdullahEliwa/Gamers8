@@ -1,5 +1,5 @@
 ﻿using Gamers8.Core.Entities.Base;
-using Gamers8.Core.Entities.EventAggregate;
+using Gamers8.Core.Entities.SummitAggregate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
