@@ -27,8 +27,8 @@ namespace Gamers8.Core.Entities.EventAggregate
         public bool RequireSignup { get; set; }
         public bool IsIncludedInEntranceTicket { get; set; }
         public bool IsFeaturedEvent { get; set; }
-
         public DescriptionLocalized FactsSheet { get; set; }
+
 
         public IEnumerable<Tag> Tags { get; set; }
         public IEnumerable<Speaker> Speakers { get; set; }
