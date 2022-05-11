@@ -2,39 +2,44 @@
 using System.Reflection;
 
 using Gamers8.Core.Entities.Base;
-using Gamers8.Core.Services;
-using Gamers8.Core.Entities.EventAggregate;
+using Gamers8.Core.Entities.SummitAggregate;
 using Gamers8.Core.Abstractions;
 using Gamers8.Infrastructure.Persistence.Extensions;
+using Gamers8.Core.Entities.SharedAggregate;
 
 namespace Booking.Infrastructure.Persistence
 {
     public class Gamers8Context : DbContext
     {
-        private readonly ICurrentUserService _currentUserService;
-        public Gamers8Context(DbContextOptions options, ICurrentUserService currentUserService) : base(options)
+        public Gamers8Context(DbContextOptions options) : base(options)
         {
-            _currentUserService = currentUserService;
+
         }
 
         #region DbSets
-
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<Speaker> Speakers { get; set; }
         public DbSet<Summit> Summits { get; set; }
+        public DbSet<SummitDay> SummitDays { get; set; }
+        public DbSet<SummitSession> SummitSessions { get; set; }
+
+
 
         #endregion
 
-        public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
+        public async Task<bool> SaveEntitiesAsync<T>(CancellationToken cancellationToken = default)
         {
-            foreach (var entry in ChangeTracker.Entries<AuditableEntity<Guid>>())
+            foreach (var entry in ChangeTracker.Entries<AuditableEntity<T>>())
                 switch (entry.State)
                 {
                     case EntityState.Added:
-                        entry.Entity.CreatedBy = string.IsNullOrEmpty(_currentUserService.UserId) ? "Na" : _currentUserService.UserId;
+                        entry.Entity.CreatedBy = "Na";
                         entry.Entity.Created = DateTimeOffset.UtcNow;
                         break;
 
                     case EntityState.Modified:
-                        entry.Entity.LastModifiedBy = string.IsNullOrEmpty(_currentUserService.UserId) ? "Na" : _currentUserService.UserId;
+                        entry.Entity.LastModifiedBy = "Na";
                         entry.Entity.LastModified = DateTimeOffset.UtcNow;
                         break;
                 }

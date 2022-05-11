@@ -16,8 +16,6 @@ namespace Gamers8.Infrastructure.Persistence.Configurations.SharedAggregate
         {
             base.Configure(builder);
 
-            builder.Property(s => s.Name)
-            .IsRequired();
             builder.OwnsOne(s => s.Name, t =>
             {
                 t.Property(n => n.DescriptionAr).HasColumnName("NameAr").IsRequired().HasMaxLength(50);
@@ -28,24 +26,18 @@ namespace Gamers8.Infrastructure.Persistence.Configurations.SharedAggregate
                 .IsRequired()
                 .HasMaxLength(150);
 
-            builder.Property(s => s.JobTitle)
-            .IsRequired();
             builder.OwnsOne(s => s.JobTitle, t =>
             {
                 t.Property(n => n.DescriptionAr).HasColumnName("JobTitleAr").IsRequired().HasMaxLength(50);
                 t.Property(n => n.DescriptionEn).HasColumnName("JobTitleEn").IsRequired().HasMaxLength(50);
             });
 
-            builder.Property(s => s.Employer)
-            .IsRequired(false);
             builder.OwnsOne(s => s.Employer, t =>
             {
                 t.Property(n => n.DescriptionAr).HasColumnName("EmployerAr").IsRequired().HasMaxLength(50);
                 t.Property(n => n.DescriptionEn).HasColumnName("EmployerEn").IsRequired().HasMaxLength(50);
             });
 
-            builder.Property(s => s.Brief)
-            .IsRequired(false);
             builder.OwnsOne(s => s.Brief, t =>
             {
                 t.Property(n => n.DescriptionAr).HasColumnName("BriefAr").IsRequired().HasMaxLength(150);

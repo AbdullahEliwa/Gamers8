@@ -16,8 +16,6 @@ namespace Gamers8.Infrastructure.Persistence.Configurations.SharedAggregate
         {
             base.Configure(builder);
 
-            builder.Property(s => s.Name)
-               .IsRequired();
             builder.OwnsOne(s => s.Name, t =>
             {
                 t.Property(n => n.DescriptionAr).HasColumnName("TitleAr").IsRequired().HasMaxLength(50);

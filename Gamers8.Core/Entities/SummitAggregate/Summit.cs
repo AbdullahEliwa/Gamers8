@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gamers8.Core.Entities.EventAggregate
+namespace Gamers8.Core.Entities.SummitAggregate
 {
     public class Summit : AuditableEntity<Guid>
     {
@@ -23,7 +23,7 @@ namespace Gamers8.Core.Entities.EventAggregate
         public SeasonZones SeasonZone { get; set; }
         public DateTimeRange DateTime { get; set; }
         public DescriptionLocalized ProgramFilePath { get; set; }
-        public byte AgeGroupFrom { get; set; }
+        public byte? AgeGroupFrom { get; set; }
         public bool RequireSignup { get; set; }
         public bool IsIncludedInEntranceTicket { get; set; }
         public bool IsFeaturedEvent { get; set; }
