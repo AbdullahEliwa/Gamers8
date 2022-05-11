@@ -1,4 +1,5 @@
-﻿using Gamers8.Core.Entities.Base;
+﻿using Booking.Core.ValueObjects;
+using Gamers8.Core.Entities.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Gamers8.Core.Entities.AttractionsAggregate
     public class GalleryItem : AuditableEntity<Guid>
     {
         public string ItemName { get; set; }
-        public string FilePath { get; set; }
+        public DescriptionLocalized FilePath { get; set; }
         public Attraction Attraction { get; set; }
     }
 }

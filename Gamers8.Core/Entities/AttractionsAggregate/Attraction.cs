@@ -20,10 +20,10 @@ namespace Gamers8.Core.Entities.AttractionsAggregate
         public string Title { get;  set; }
         public AttractionCategories AttractionCategory { get;  set; }
         public string DefaultImagePath { get;  set; }
-        public string Description { get;  set; }
+        public DescriptionLocalized Description { get;  set; }
         public SeasonZones SeasonZone { get;  set; }
         public DateTimeRange DateTime { get; set; }
-        public string OpeningTimes { get; set; }
+        public DescriptionLocalized OpeningTimes { get; set; }
         public int AgeGroupFrom { get; set; }
         public bool IncludedInEntranceTicket { get; set; }
         public bool RequiresSignup { get; set; }
