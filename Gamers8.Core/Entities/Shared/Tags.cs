@@ -16,7 +16,7 @@ namespace Gamers8.Core.Entities.SharedAggregate
             Summits = new HashSet<Summit>();
         }
 
-        public string Name { get; private set; }
+        public string Name { get;  set; }
 
         public IEnumerable<Summit> Summits { get; set; }
         public IEnumerable<Attraction> Attractions { get; set; }

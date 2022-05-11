@@ -1,5 +1,6 @@
 ﻿using Booking.Infrastructure.Persistence;
 using Gamers8.Core.Repositories;
+using Gamers8.Core.Repositories.AttractionFeature;
 using Gamers8.Core.Repositories.SummitFeature;
 
 namespace Gamers8.Infrastructure.Repositories
@@ -19,6 +20,8 @@ namespace Gamers8.Infrastructure.Repositories
 
         public ISummitRepository Summits { get; private set; }
         public ISummitDayRepository SummitDays { get; private set; }
+        public IAttractionRepository Attraction { get; private set; }
+
         public Task<bool> Complete<T>()
         {
             return _context.SaveEntitiesAsync<T>();

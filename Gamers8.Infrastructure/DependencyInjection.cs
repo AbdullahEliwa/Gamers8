@@ -7,6 +7,8 @@ using Gamers8.Infrastructure.Repositories;
 using Gamers8.Infrastructure.Repositories.SummitFeature;
 using Gamers8.Core.Repositories.SummitFeature;
 using Gamers8.Core.Repositories;
+using Gamers8.Core.Repositories.AttractionFeature;
+using Gamers8.Infrastructure.Repositories.AttractionFeature;
 
 namespace Gamers8.Infrastructure
 {
@@ -23,6 +25,7 @@ namespace Gamers8.Infrastructure
             services.AddScoped<ISummitRepository, SummitRepository>();
             services.AddScoped<ISummitDayRepository, SummitDayRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IAttractionRepository, AttractionRepository>();
 
 
 
