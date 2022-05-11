@@ -9,20 +9,6 @@ namespace Gamers8.Api.Features.SummitsFeature.Summit.Admin
 
     public static class Create
     {
-        //    #region CTOR, Fields
-        //    private readonly IUnitOfWork _unitOfWork;
-        //    public Create(IUnitOfWork unitOfWork)
-        //    {
-        //        _unitOfWork = unitOfWork;
-        //    }
-        //    #endregion
-
-        //    [HttpGet]
-        //    public Task<ActionResult> Create(CreateSummitCommand command)
-        //        => Execute(command);
-        //}
-
-
         public record Command(string titleAr, string titleEn,
                                   string defaultImagePathAr, string defaultImagePathEn,
                                   SeasonZones seasonZone,
@@ -33,7 +19,7 @@ namespace Gamers8.Api.Features.SummitsFeature.Summit.Admin
                                   bool isIncludedInEntranceTicket,
                                   bool isFeaturedEvent,
                                   string factsSheetAr, string factsSheetEn)
-            : IRequest<string>//, IMapFrom<summitDomain.Summit>
+            : IRequest<string>
         {
             public void Mapping(Profile profile)
             {
