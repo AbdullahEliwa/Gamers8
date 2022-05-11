@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Booking.Api.Areas.Base;
+namespace Gamers8.Api.Features.Base;
 [Route("api/v1/[controller]")]
 [ApiController]
 public class ApiBaseController<C> : ControllerBase

@@ -13,7 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo { Title = "Gamers8 API", Version = "v1" });
-    //options.OperationFilter<TagByAreaNameOperationFilter>();
+    options.OperationFilter<TagByAreaNameOperationFilter>();
 });
 
 builder.Services.AddInfrastructure(builder.Configuration);
