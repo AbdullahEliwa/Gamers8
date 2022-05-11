@@ -6,6 +6,7 @@ using Gamers8.Core.Entities.SummitAggregate;
 using Gamers8.Core.Abstractions;
 using Gamers8.Infrastructure.Persistence.Extensions;
 using Gamers8.Core.Entities.SharedAggregate;
+using Gamers8.Core.Entities.AttractionsAggregate;
 
 namespace Booking.Infrastructure.Persistence
 {
@@ -23,7 +24,8 @@ namespace Booking.Infrastructure.Persistence
         public DbSet<Summit> Summits { get; set; }
         public DbSet<SummitDay> SummitDays { get; set; }
         public DbSet<SummitSession> SummitSessions { get; set; }
-
+        public DbSet<Attraction> Attractions { get; set; }
+        public DbSet<GalleryItem> GalleryItems { get; set; }
 
 
         #endregion

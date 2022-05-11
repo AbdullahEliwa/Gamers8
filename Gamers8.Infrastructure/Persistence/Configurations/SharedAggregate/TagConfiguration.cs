@@ -14,9 +14,12 @@ namespace Gamers8.Infrastructure.Persistence.Configurations.SharedAggregate
         public void Configure(EntityTypeBuilder<Tag> builder)
         {
             builder.HasKey(c => c.Name);
+
             builder.Property(c => c.Name)
                 .IsRequired()
                 .HasMaxLength(50);
+
+
 
 
         }

@@ -17,7 +17,7 @@ namespace Gamers8.Core.Entities.AttractionsAggregate
             Tags = new HashSet<Tag>();
             GalleryItems= new HashSet<GalleryItem>();
         }
-        public string Title { get;  set; }
+        public DescriptionLocalized Title { get;  set; }
         public AttractionCategories AttractionCategory { get;  set; }
         public string DefaultImagePath { get;  set; }
         public DescriptionLocalized Description { get;  set; }

@@ -11,7 +11,7 @@ namespace Gamers8.Core.Entities.AttractionsAggregate
     public class GalleryItem : AuditableEntity<Guid>
     {
         public string ItemName { get; set; }
-        public DescriptionLocalized FilePath { get; set; }
+        public string FilePath { get; set; }
         public Attraction Attraction { get; set; }
     }
 }
