@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace Booking.Application.Common.Mappings
+namespace Gamers8.Api.Configurations.Mapping
 {
     public interface IMapFrom<T>
     {   

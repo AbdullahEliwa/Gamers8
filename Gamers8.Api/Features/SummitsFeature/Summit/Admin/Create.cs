@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Booking.Application.Common.Mappings;
 using Booking.Core.ValueObjects;
 using Gamers8.Core.Repositories;
 using Gamers8.Core.Shared;

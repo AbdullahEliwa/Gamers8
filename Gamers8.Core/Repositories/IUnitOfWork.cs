@@ -1,4 +1,5 @@
-﻿using Gamers8.Core.Repositories.SummitFeature;
+﻿using Gamers8.Core.Repositories.AttractionFeature;
+using Gamers8.Core.Repositories.SummitFeature;
 
 namespace Gamers8.Core.Repositories
 {
@@ -6,6 +7,8 @@ namespace Gamers8.Core.Repositories
     {
         ISummitRepository Summits { get; }
         ISummitDayRepository SummitDays { get; }
+        IAttractionRepository Attraction { get; }
+
         Task<bool> Complete<T>();
     }
 }

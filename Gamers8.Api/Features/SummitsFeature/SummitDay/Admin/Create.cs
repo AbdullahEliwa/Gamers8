@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Booking.Application.Common.Mappings;
+using Gamers8.Api.Configurations.Mapping;
 using Gamers8.Core.Repositories;
 using MediatR;
 using summitDomain = Gamers8.Core.Entities.SummitAggregate;

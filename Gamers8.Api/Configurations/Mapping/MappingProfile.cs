@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 
-namespace Booking.Application.Common.Mappings
+namespace Gamers8.Api.Configurations.Mapping
 {
     public class MappingProfile : Profile
     {
